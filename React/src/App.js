@@ -1,9 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import axios from './components/Axios';
-// import axios from 'axios'
 import AddDonor from './components/AddDonor'
 import Home from './components/Home'
+import Search from './components/Search'
+import Report from './components/Report';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// import { BrowserRouter as Router, Swich, Route } from 'react-router-dom'
+// import axios from './components/Axios';
+
 
 
 class App extends React.Component {
@@ -26,9 +32,18 @@ class App extends React.Component {
   };
 
 
+
   render() {
+
+
+
     return (
+
+      
       <>
+{/* 
+        <Search /> 
+        <Report/> */}
          <Router>
          <Route path="/" exact component={Home} /> 
           <Route path="/adddonor" component={()=><AddDonor postDonor={this.postDonor}/>} /> 
@@ -36,12 +51,19 @@ class App extends React.Component {
         
 
 
-
+      
 
         </Router> 
       </>
     );
   }
 }
+
+
+
+
+
+
+
 
 export default App;

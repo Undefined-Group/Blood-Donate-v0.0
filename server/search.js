@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const mongo = require("../DB/delelte")
 
+
 //write your code here 
 
+  
 router.get('/test', (req, res) => {
     mongo.readData((result) => {
         console.log('result', result);
@@ -12,3 +14,5 @@ router.get('/test', (req, res) => {
 });
 
 module.exports = router;
+
+
