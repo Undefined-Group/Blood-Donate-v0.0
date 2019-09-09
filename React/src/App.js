@@ -1,5 +1,8 @@
 import React from 'react';
+import Search from './components/Search'
 import Report from './components/Report';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // import { BrowserRouter as Router, Swich, Route } from 'react-router-dom'
 // import axios from './components/Axios';
 
@@ -9,20 +12,34 @@ class App extends React.Component {
     search: []
   }
 
+
   render() {
+
+
+
     return (
+
+      
       <>
         {/* <Router>
-      <Report/>
 
+        <Search /> 
+        <Report/>
 
+      */}
+      
+      {/* </Router> */}
 
-
-
-        </Router> */}
       </>
     );
   }
 }
+
+
+
+
+
+
+
 
 export default App;
