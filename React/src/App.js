@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SearchResults from "./components/SearchResults"
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import axios from './components/Axios';
 import AddDonor from './components/AddDonor'
 import Home from './components/Home'
@@ -71,21 +71,21 @@ class App extends React.Component {
       numberOfcalls: 1,
       dateOfPublish: '2019-09-08T22:41:50.852Z',
       __v: 0,
-    }]
-    DonorData:[]
+    }],
+    DonorData: []
   }
 
-// Add Donor
-  postDonor = (firstName, lastName, phone ,country,city,bloodType,email,birthday,cleanInput) => {
+  // Add Donor
+  postDonor = (firstName, lastName, phone, country, city, bloodType, email, birthday, cleanInput) => {
     console.log("Post Donor")
     axios
       .post(`/${firstName}/${lastName}/${phone}/${country}/${city}/${bloodType}/${email}/${birthday}`)
       .then(response => {
         this.setState({ DonorData: response.data });
-        
+
       });
-      console.log("data",this.state.DonorData)
-      cleanInput()  
+    console.log("data", this.state.DonorData)
+    cleanInput()
   };
 
 
@@ -97,16 +97,16 @@ class App extends React.Component {
     return (
       <>
         {/* <SearchResults search={this.state.search} /> */}
-      
-{/* 
+
+        {/* 
         <Search/> 
         <Report/> */}
-         <Router>
-         <Route path="/" exact component={Home} /> 
-          <Route path="/adddonor" component={()=><AddDonor postDonor={this.postDonor}/>} /> 
-          
-       
-        </Router> 
+        <Router>
+          <Route path="/" exact component={Home} />
+          <Route path="/adddonor" component={() => <AddDonor postDonor={this.postDonor} />} />
+
+
+        </Router>
       </>
     );
   }

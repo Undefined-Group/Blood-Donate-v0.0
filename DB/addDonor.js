@@ -14,9 +14,11 @@ let readData = (cb) => {
     })
 }
 
-let newDonor = (firstName,lastName,phone,country,city,bloodType,email,birthday,cb) => {
-    Donor.create({firstName:firstName,lastName:lastName,
-        phone:phone,country:country,city:city,bloodType:bloodType,email:email,birthday:birthday}, (err, data) => {
+let newDonor = (firstName, lastName, phone, country, city, bloodType, email, birthday, cb) => {
+    Donor.create({
+        firstName: firstName, lastName: lastName,
+        phone: phone, country: country, city: city, bloodType: bloodType, email: email, birthday: birthday
+    }, (err, data) => {
         if (err) {
             cb(err)
         } else {
@@ -28,6 +30,5 @@ let newDonor = (firstName,lastName,phone,country,city,bloodType,email,birthday,c
 
 module.exports = {
     readData,
-    additem,
     newDonor
 }
