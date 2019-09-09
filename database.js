@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/DnSUsers', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/BloodDonate', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.on('error', function () {
