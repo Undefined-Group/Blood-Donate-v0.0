@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/DnSUsers', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/BloodDonate', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.on('error', function () {
@@ -17,7 +17,7 @@ db.once('open', function () {
 let donorSchema = new mongoose.Schema({
   // _id: String,
   firstName: String,
-  lasttName: String,
+  lastName: String,
   phone: Number,
   email: String,
   bloodType: String,
