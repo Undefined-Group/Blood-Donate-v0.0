@@ -12,8 +12,8 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <Report/>
         {/* <Router>
+      <Report/>
 
 
 
