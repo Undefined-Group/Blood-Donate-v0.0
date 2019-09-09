@@ -13,9 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.6.9"
+    "mongoose": "^5.6.9",
+    "react-dropdown-select": "^3.5.0",
+    "react-select": "^3.0.4",
+    "react-select-search": "^0.9.6"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
