@@ -10,7 +10,7 @@ import Search from './components/Search'
 
 class App extends React.Component {
   state = {
-    Search: []
+    search: []
   }
 
 
@@ -22,12 +22,13 @@ class App extends React.Component {
 
       
       <>
-        {/* <Router> */}
-<Search> 
+        {/* <Router>
+        <Search> 
 
 
   
-</Search>
+</Search>*/}
+
 
        
         {/* ); */}
