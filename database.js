@@ -17,7 +17,7 @@ db.once('open', function () {
 let donorSchema = new mongoose.Schema({
   // _id: String,
   firstName: String,
-  lasttName: String,
+  lastName: String,
   phone: Number,
   email: String,
   bloodType: String,

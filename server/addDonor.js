@@ -10,4 +10,21 @@ router.get('/test', (req, res) => {
     })
 });
 
+router.post('/:firstName/:lastName/:phone/:country/:city/:bloodType/:email/:birthday', (req, res) => {
+     let firstName = req.params.firstName;
+     let lastName = req.params.lastName;
+     let phone = req.params.phone;
+     let country = req.params.country;
+     let city = req.params.city;
+     let bloodType = req.params.bloodType;
+     let email = req.params.email;
+     let birthday = req.params.birthday;
+
+     console.log("server",firstName,lastName,phone,country,city,bloodType,email,birthday)
+
+     mongo.newDonor(firstName,lastName,phone,country,city,bloodType,email,birthday,(result) => {
+        res.json(result);
+      })
+   });
+
 module.exports = router;
