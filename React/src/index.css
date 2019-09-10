@@ -1,3 +1,24 @@
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-  background-color: rgb(235, 140, 140);
+.table-striped > tbody > tr:nth-child(2n + 1) > td,
+.table-striped > tbody > tr:nth-child(2n + 1) > th {
+
+  background-color: rgb(226, 73, 73);
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(204, 24, 24, 0.911);
+  color: white;
+  /* text-align: justify; */
+}
+
+.fa {
+  padding: 30px;
+  font-size: 30px;
+  width: 50px;
+  text-align: right;
+  text-decoration: none;
+  margin: 3px 3px;
 }

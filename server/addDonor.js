@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const mongo = require("../DB/delelte")
+const mongo = require("../DB/delete")
 
 const mongoAddDonor = require("../DB/addDonor")
 

@@ -13,18 +13,17 @@ let readData = cb => {
     }
   });
 };
-let updateDonor = (newReport, cb) => {
-  console.log("Dbbbbbbbbbbbbbbb", newReport);
-  Donor.findByIdAndUpdate(newReport._id, newReport, (err, data) => {
+let deleteDoner = (donor, cb) => {
+  Donor.findByIdAndDelete(donor, (err, data) => {
     if (err) {
       cb(err);
     } else {
-      // console.log('data:', data);
-      cb(data);
+      readData(cb);
     }
   });
 };
+
 module.exports = {
-  updateDonor,
-  readData
+  readData,
+  deleteDoner
 };
