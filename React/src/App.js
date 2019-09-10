@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchResults from "./components/SearchResults"
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import axios from './components/Axios';
 import AddDonor from './components/AddDonor'
 import Home from './components/Home'
@@ -98,11 +98,9 @@ setSearch=(sData)=>{
   render() {
     return (
       <>
-      
        {/* <Report/>
       <SearchResults search={this.state.search} /> 
        <Search/>  */}
-        
          <Router>
          <Route path="/" exact component={Home} /> 
          <Route path="/adddonor" component={()=><AddDonor postDonor={this.postDonor}/>} /> 
