@@ -2,22 +2,17 @@ import React from "react";
 import SearchResults from "./components/SearchResults";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-// import SearchResults from "./components/SearchResults"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "./components/Axios";
 import AddDonor from "./components/AddDonor";
 import Home from "./components/Home";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import Search from "./components/Search";
 import Report from "./components/Report";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-
-// import 'react-phone-number-input/style.css'
-// import PhoneInput from 'react-phone-number-input'
-
 import Delete from "./components/Delete";
+
 
 class App extends React.Component {
   state = {
@@ -120,6 +115,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+
         <Footer />
         <Delete />
         {/* <Report/>

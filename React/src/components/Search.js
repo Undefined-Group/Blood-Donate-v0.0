@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import Spinner from 'react-bootstrap/Spinner'
- import axios from './Axios';
+import axios from './Axios';
 export default class Search extends Component {
     state = {
         country: 'Jordan',
@@ -15,30 +15,34 @@ export default class Search extends Component {
 
 
     onSubmit = (e) => {
-        console.log('submet',this.state)
+        console.log('submet', this.state)
         e.preventDefault()
 
-        axios.post('/search',this.state)       
-        .then(res =>{
-            this.props.setSearch(res.data)
-        })
-        .catch( error => {
-        console.log(error);
-        })
-        }
+        axios.post('/search', this.state)
+            .then(res => {
+                this.props.setSearch(res.data)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
-      render() {
+    render() {
 
         return (
 
             <React.Fragment>
+                /*dont delet this pleas
+                                {/* <div class="spinner-grow text-danger" role="status">
+                                 <span class="sr-only"> <h1 >search for donat</h1></span>     
+                                 </div> */}
 
-                {/* <div>   <> <Spinner animation="grow" variant="danger" /> </> <h1 >search for donat</h1></div> */}
+
                 <div className="container">
-                    <div className="row border border-danger rounded-pill mt-5 p-4 ">
-                        <div className="col-3">
-                            <select name="country" defaultValue={'Jordan'} id="country" className="custom-select" onChange={this.changeValue} >
-                                <option value="Jordan">Jordan</option>
+                    <div className="row border border-danger rounded-pill mt-5 p-4 " >
+                        <div  className="col-3">
+                            <select name="country" defaultValue={'Jordan'} id="country" className="custom-select btn btn-danger dropdown-toggle" onChange={this.changeValue} >
+                                <option  value="Jordan">Jordan</option>
                                 <option value="American Samoa">American Samoa</option>
                                 <option value="Andorra">Andorra</option>
                                 <option value="Angola">Angola</option>
@@ -66,7 +70,7 @@ export default class Search extends Component {
                         </div>
 
                         <div className="col-3">
-                            <select name="city" defaultValue={'Amman'} id="city" className="custom-select" onChange={this.changeValue}>
+                            <select name="city" defaultValue={'Amman'} id="city" className="custom-select btn btn-danger dropdown-toggle" onChange={this.changeValue}>
                                 <option value="Amman" >Amman</option>
                                 <option value="Irbid">Irbid</option>
                                 <option value="Ajloun">Ajloun</option>
@@ -85,7 +89,7 @@ export default class Search extends Component {
 
 
                         <div className="col-3">
-                            <select name="bloodType" defaultValue={'O+'} id="bloodType" className="custom-select" onChange={this.changeValue} >
+                            <select name="bloodType" defaultValue={'O+'} id="bloodType" className="custom-select btn btn-danger dropdown-toggle" onChange={this.changeValue} >
                                 <option value="O+" >O+</option>
                                 <option value="O-">O-</option>
                                 <option value="A+">A+</option>
@@ -99,8 +103,8 @@ export default class Search extends Component {
 
 
                         <div className="col-2">
-                            <button  type="submit" className="btn btn-danger btn-block"  onClick={this.onSubmit}>submit</button>
-                            {/* <button type='advanced search' className='btn btn-danger btn-block'>
+                            <button type="submit" className="btn btn-danger btn-block" onClick={this.onSubmit}>submit</button>
+                           {/* <button type='advanced search' className='btn btn-danger btn-block'>
  advanced search
         </button>  */}
                         </div>
