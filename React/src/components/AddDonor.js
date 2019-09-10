@@ -13,15 +13,40 @@ export default class AddDonor extends Component {
         birthday: '',
         dateOfPublish: '',
         reports: [],
-        numberOfcalls: 0
+        numberOfcalls: 0,
+        validation: {
+
+            firstName: /^[a-zA-Z]{3,15}$/,
+            lastName:/^[a-zA-Z]{3,15}$/,
+            phone: /^[0-9]{6,}$/,
+            email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            birthday: /^(((0)[0-9])|((1)[0-2]))(\-)([0-2][0-9]|(3)[0-1])(\-)\d{4}$/
+            
+          },
+          isValidfirstName: false,
+          isValidlastName: false,
+          isValidphone: false,
+          isValidemail: false,
+          isValidbirthday: false
     }
 
-    changeValue = (e) => {
-        this.setState({[e.target.name]: e.target.value })
+    changeWithRegex = (e) => {
+        console.log(this.state.validation[e.target.name].test(e.target.value))
+
+        this.setState({[e.target.name]: e.target.value
+            ,
+            [`isValid${e.target.name}`]: this.state.validation[e.target.name].test(e.target.value) 
+        })
+
+        console.log(this.state.isValidName)
+      }
+
+      changeValue = (e) => {
+        this.setState({[e.target.name]: e.target.value }) 
       }
 
     cleanInput = () => {
-        this.setState({ firstName: "", lasttName: "", phone: "", email: "" ,
+        this.setState({ firstName: "", lastName: "", phone: "", email: "" ,
          bloodType: "", country: "", city: "",birthday:""});
       };
     render() {
@@ -36,7 +61,7 @@ export default class AddDonor extends Component {
                         </div>
                         <div className="col-6">
                             <input type="text" name="firstName" className="form-control input_filed"
-                              onChange={this.changeValue} value={this.state.firstName} placeholder="Enter First Name ..." required />
+                              onChange={this.changeWithRegex} value={this.state.firstName} placeholder="Enter First Name ..." required />
                         </div>
                     </div>
 
@@ -46,7 +71,7 @@ export default class AddDonor extends Component {
                         </div>
                         <div className="col-6">
                             <input type="tel" name="lastName" className="form-control input_filed"
-                             onChange={this.changeValue} value={this.state.lastName}  placeholder="Enter Last Name ..." required />
+                             onChange={this.changeWithRegex} value={this.state.lastName}  placeholder="Enter Last Name ..." required />
                         </div>
 
 
@@ -58,7 +83,7 @@ export default class AddDonor extends Component {
                         </div>
                         <div className="col-6">
                             <input type="text" name="phone" className="form-control input_filed"
-                              onChange={this.changeValue} value={this.state.phone} placeholder="Enter Phone Number ..." required />
+                              onChange={this.changeWithRegex} value={this.state.phone} placeholder="Enter Phone Number ..." required />
                         </div>
 
                     </div>
@@ -370,8 +395,8 @@ export default class AddDonor extends Component {
                             <label >Email</label>
                         </div>
                         <div className="col-6">
-                            <input type="email" name="email" onChange={this.changeValue} className="form-control input_filed"
-                                placeholder="Enter Email ..." required />
+                            <input type="email" name="email" onChange={this.changeWithRegex} className="form-control input_filed"
+                              value={this.state.email}  placeholder="Enter Email ..." required />
                         </div>
 
                     </div>
@@ -383,8 +408,8 @@ export default class AddDonor extends Component {
                             <label >Birthday</label>
                         </div>
                         <div className="col-6">
-                            <input type="text" name="birthday" onChange={this.changeValue} className="form-control input_filed"
-                                placeholder="Enter Birthday ..." required />
+                            <input type="text" name="birthday" onChange={this.changeWithRegex} className="form-control input_filed"
+                              value={this.state.birthday}  placeholder="Enter Birthday ..." required />
                         </div>
 
                     </div>
@@ -394,9 +419,7 @@ export default class AddDonor extends Component {
                       <div className="col-4"></div>
                         <button type="submit"
                         onClick={
-                            
                               this.props.postDonor.bind(
-
                                 this,
                                 this.state.firstName,
                                 this.state.lastName,

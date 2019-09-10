@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+import React ,{Component} from 'react'
+import './Report'
 class Report extends Component {
   state = {
     report: ""
@@ -7,7 +7,9 @@ class Report extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-
+    this.setState({
+      report:e.target.value
+  })
     console.log('e.submit', e.target.value)
 
   }
@@ -23,6 +25,28 @@ class Report extends Component {
   </button>
 
 
+  
+  <div className="modal fade" id="myModal">
+    <div className="modal-dialog modal-dialog-centered">
+      <div className="modal-content">
+      
+        
+        <div className="modal-header">
+          <h4 className="modal-title">Help Us Understand the problem :</h4>
+          <button type="button" className="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <form onSubmit={this.onSubmit}>
+        <div className="modal-body">
+          What's wrong with this?
+          <div className="custom-control custom-radio">
+             <input type="radio" id="customRadio1" name="customRadio" className="custom-control-input"/>
+             <label className="custom-control-label" htmlFor="customRadio1" checked={true}>It's fack donor</label>
+          </div>
+          <div className="custom-control custom-radio">
+             <input type="radio" id="customRadio2" name="customRadio" className="custom-control-input"/>
+             <label className="custom-control-label" htmlFor="customRadio2">It's sexually explicit</label>
+          </div>
         <div className="modal fade" id="myModal">
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
@@ -68,6 +92,7 @@ class Report extends Component {
                 </div>
               </form>
             </div>
+
           </div>
         </div>
       </div>

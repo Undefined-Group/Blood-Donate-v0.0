@@ -8,11 +8,11 @@ let readData = (cb) => {
         if (err) {
             cb(err)
         } else {
-            // console.log('data:', data);
             cb(data)
         }
     })
 }
+
 
 let newDonor = (firstName, lastName, phone, country, city, bloodType, email, birthday, cb) => {
     Donor.create({
@@ -22,7 +22,6 @@ let newDonor = (firstName, lastName, phone, country, city, bloodType, email, bir
         if (err) {
             cb(err)
         } else {
-            // console.log('data:', data);
             cb(data)
         }
     })
