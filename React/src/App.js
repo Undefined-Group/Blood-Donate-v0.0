@@ -1,6 +1,5 @@
 import React from "react";
 import SearchResults from "./components/SearchResults";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "./components/Axios";
