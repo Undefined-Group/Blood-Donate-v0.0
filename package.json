@@ -16,10 +16,10 @@
     "bootstrap": "^4.3.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.6.9",
+    "mongoose": "^5.7.0",
+    "react-bootstrap": "^1.0.0-beta.12",
     "react-dropdown-select": "^3.5.0",
-    "react-select": "^3.0.4",
-    "react-bootstrap": "^1.0.0-beta.12"
+    "react-select": "^3.0.4"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
