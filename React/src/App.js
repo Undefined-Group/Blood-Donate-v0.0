@@ -1,16 +1,19 @@
 import React from 'react';
-import SearchResults from "./components/SearchResults"
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import axios from './components/Axios';
 import AddDonor from './components/AddDonor'
 import Home from './components/Home'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 // import Delete from './components/Delete';
-import Search from './components/Search'
-import Report from './components/Report';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+// import SearchResults from "./components/SearchResults"
+
+// import Search from './components/Search'
+// import Report from './components/Report';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
+//import 'react-phone-number-input/style.css'
+// import PhoneInput from 'react-phone-number-input'
+
 
 
 class App extends React.Component {
@@ -73,6 +76,8 @@ class App extends React.Component {
       dateOfPublish: '2019-09-08T22:41:50.852Z',
       __v: 0,
     }]
+
+    
   }
 
 
@@ -91,10 +96,14 @@ class App extends React.Component {
       cleanInput()  
   };
 
-setSearch=(sData)=>{
-  console.log('sdata', sData)
-  this.setState({search:sData})
-}
+
+// setSearch=(sData)=>{
+//   console.log('sdata', sData)
+//   this.setState({search:sData})
+// }
+
+
+
   render() {
     return (
       <>
@@ -103,8 +112,10 @@ setSearch=(sData)=>{
        <Search/>  */}
          <Router>
          <Route path="/" exact component={Home} /> 
+
          <Route path="/adddonor" component={()=><AddDonor postDonor={this.postDonor}/>} /> 
         </Router> 
+
       </>
     );
   }
