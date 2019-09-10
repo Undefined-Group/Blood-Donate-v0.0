@@ -8,6 +8,7 @@ export default class Home extends Component {
            <Link to="/adddonor">
            <button type="button" className="btn btn-info" >Add Donor</button>
            </Link>
+           
             </div>
         )
     }
