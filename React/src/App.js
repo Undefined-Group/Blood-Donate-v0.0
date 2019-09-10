@@ -13,7 +13,6 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import Delete from "./components/Delete";
 
-
 class App extends React.Component {
   state = {
     DonorData: [],
@@ -108,6 +107,7 @@ class App extends React.Component {
     cleanInput();
   };
 
+
   setSearch = sData => {
     console.log("sdata", sData);
     this.setState({ search: sData });
@@ -127,8 +127,6 @@ class App extends React.Component {
             path="/adddonor"
             component={() => <AddDonor postDonor={this.postDonor} />}
           />
-          <Route path="/delete" component={Delete} />
-        </Router>
       </>
     );
   }

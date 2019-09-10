@@ -13,12 +13,19 @@ let readData = (cb) => {
     })
 }
 
+<<<<<<< HEAD
 
 let newDonor = (firstName, lastName, phone, country, city, bloodType, email, birthday, cb) => {
     Donor.create({
         firstName: firstName, lastName: lastName,
         phone: phone, country: country, city: city, bloodType: bloodType, email: email, birthday: birthday
     }, (err, data) => {
+=======
+let newDonor = (firstName,lastName,phone,country,city,bloodType,email,birthday,cb) => {
+    Donor.create({firstName:firstName,lastName:lastName,
+        phone:phone,country:country,city:city,bloodType:bloodType,
+        email:email,birthday:birthday}, (err, data) => {
+>>>>>>> backend add donor
         if (err) {
             cb(err)
         } else {
