@@ -1,9 +1,11 @@
 import React from 'react';
 import SearchResults from "./components/SearchResults"
+
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import axios from './components/Axios';
 import AddDonor from './components/AddDonor'
 import Home from './components/Home'
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import Search from './components/Search'
 import Report from './components/Report';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,6 +15,7 @@ import PhoneInput from 'react-phone-number-input'
 
 class App extends React.Component {
   state = {
+    DonorData:[],
     search: [{
       reports: [],
       _id: '5d7583ae10835f244ba02aba',
@@ -73,27 +76,30 @@ class App extends React.Component {
   }
 
 // Add Donor
-  postDonor = (firstName, lastName, phone ,country,city,bloodType,email,birthday,cleanInput) => {
+  postDonor = (firstName, lastName, phone, country, city, bloodType, email, birthday, cleanInput) => {
     console.log("Post Donor")
     axios
-      .post(`/${firstName}/${lastName}/${phone}/${country}/${city}/${bloodType}/${email}/${birthday}`)
+      .post(`/addDonor/${firstName}/${lastName}/${phone}/${country}/${city}/${bloodType}/${email}/${birthday}`)
       .then(response => {
-        this.setState({ DonorData: response.data });
-        
+        console.log("Post befoure")
+        this.setState({DonorData: response.data });
+        console.log("data", response.data)
+        console.log("data",this.state.DonorData)
       });
-      console.log("data",this.state.DonorData)
+      console.log("Post after")
       cleanInput()  
   };
+
 
 setSearch=(sData)=>{
   console.log('sdata', sData)
   this.setState({search:sData})
 }
+
   render() {
 
     return (
       <>
-  <Search setSearch={this.setSearch}/> 
         {/* <SearchResults search={this.state.search} /> */}
       
 {/* 
@@ -101,15 +107,7 @@ setSearch=(sData)=>{
         <Report/> */}
          <Router>
          <Route path="/" exact component={Home} /> 
-          <Route path="/adddonor" component={()=><AddDonor postDonor={this.postDonor}/>} /> 
-          
-        {/* <Router> */}
-
-
-
-
-
-       
+         <Route path="/adddonor" component={()=><AddDonor postDonor={this.postDonor}/>} /> 
         </Router> 
       </>
     );

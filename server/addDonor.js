@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const mongo = require("../DB/delelte")
 
+const mongoAddDonor = require("../DB/addDonor")
+
 //write your code here 
 
 router.get('/test', (req, res) => {
@@ -11,6 +13,7 @@ router.get('/test', (req, res) => {
 });
 
 router.post('/:firstName/:lastName/:phone/:country/:city/:bloodType/:email/:birthday', (req, res) => {
+    console.log("Rawabi server")
      let firstName = req.params.firstName;
      let lastName = req.params.lastName;
      let phone = req.params.phone;
@@ -20,9 +23,7 @@ router.post('/:firstName/:lastName/:phone/:country/:city/:bloodType/:email/:birt
      let email = req.params.email;
      let birthday = req.params.birthday;
 
-     console.log("server",firstName,lastName,phone,country,city,bloodType,email,birthday)
-
-     mongo.newDonor(firstName,lastName,phone,country,city,bloodType,email,birthday,(result) => {
+     mongoAddDonor.newDonor(firstName,lastName,phone,country,city,bloodType,email,birthday,(result) => {
         res.json(result);
       })
    });
