@@ -53,7 +53,8 @@ export default class AddDonor extends Component {
 
         return (
             <React.Fragment>
-                <div className="d-flex flex-column align-items-center" style={{ marginTop: '60px' }}>
+                <div >
+                <div className="d-flex flex-column align-items-center mt-5 border border-danger" >
 
                     <div className="form-group w-50 row">
                         <div className="col-3">
@@ -437,6 +438,7 @@ export default class AddDonor extends Component {
                     </div>
                  
 
+                </div>
                 </div>
             </React.Fragment>
         )
