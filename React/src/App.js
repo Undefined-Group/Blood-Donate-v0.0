@@ -99,13 +99,13 @@ class App extends React.Component {
         {/* <SearchResults search={this.state.search} /> */}
 
         {/* 
-        <Search/> 
-        <Report/> */}
-        <Router>
-          {/* <Route path="/" exact component={Home} />
-          <Route path="/adddonor" component={() => <AddDonor postDonor={this.postDonor} />} /> */}
+        <Search/> */}
+        <Report />
+        {/* <Router>
+          <Route path="/" exact component={Home} />
+          <Route path="/adddonor" component={() => <AddDonor postDonor={this.postDonor} />} />
 
-        </Router>
+        </Router> */}
       </>
     );
   }
