@@ -1,4 +1,5 @@
 import React ,{Component} from 'react'
+import './Report'
 
 class Report extends Component {
   state = {
@@ -7,7 +8,9 @@ class Report extends Component {
 
   onSubmit=(e)=>{
     e.preventDefault()
-
+    this.setState({
+      report:e.target.value
+  })
     console.log('e.submit', e.target.value)
 
   }
@@ -38,7 +41,7 @@ class Report extends Component {
           What's wrong with this?
           <div className="custom-control custom-radio">
              <input type="radio" id="customRadio1" name="customRadio" className="custom-control-input"/>
-             <label className="custom-control-label" htmlFor="customRadio1">It's fack donor</label>
+             <label className="custom-control-label" htmlFor="customRadio1" checked={true}>It's fack donor</label>
           </div>
           <div className="custom-control custom-radio">
              <input type="radio" id="customRadio2" name="customRadio" className="custom-control-input"/>
@@ -57,7 +60,7 @@ class Report extends Component {
           <div className="custom-control custom-radio">
              <input type="radio" id="customRadio5" name="customRadio" className="custom-control-input" onSelect={this.other}/>
              <label className="custom-control-label" htmlFor="customRadio5">other...
-             <br></br><input type="text" id="t" ></input>
+             <br></br><input type="text" placeholder="Enter here..."  id="t" className="i"></input>
              </label>             
              
           </div>

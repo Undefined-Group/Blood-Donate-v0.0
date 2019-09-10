@@ -1,11 +1,11 @@
 import React from 'react';
 import SearchResults from "./components/SearchResults"
-
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import axios from './components/Axios';
 import AddDonor from './components/AddDonor'
 import Home from './components/Home'
-//import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Delete from './components/Delete';
 import Search from './components/Search'
 import Report from './components/Report';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -75,6 +75,7 @@ class App extends React.Component {
     }]
   }
 
+
 // Add Donor
   postDonor = (firstName, lastName, phone, country, city, bloodType, email, birthday, cleanInput) => {
     console.log("Post Donor")
@@ -90,21 +91,18 @@ class App extends React.Component {
       cleanInput()  
   };
 
-
 setSearch=(sData)=>{
   console.log('sdata', sData)
   this.setState({search:sData})
 }
-
   render() {
-
     return (
       <>
-        {/* <SearchResults search={this.state.search} /> */}
       
-{/* 
-        <Search/> 
-        <Report/> */}
+       {/* <Report/>
+      <SearchResults search={this.state.search} /> 
+       <Search/>  */}
+        
          <Router>
          <Route path="/" exact component={Home} /> 
          <Route path="/adddonor" component={()=><AddDonor postDonor={this.postDonor}/>} /> 
