@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/delelte", require("./server/delelte"));
+app.use("/delete", require("./server/delete"));
 app.use("/addDonor", require("./server/addDonor"));
 app.use("/search", require("./server/search"));
 app.use("/report", require("./server/report"));
