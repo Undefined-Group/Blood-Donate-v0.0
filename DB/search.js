@@ -3,17 +3,17 @@ let Donor = db.Donor
 
 //write your code here 
 
-let readData = (cb) => {
-    Donor.find({}, (err, data) => {
+let readData = (sData,cb) => {
+console.log('sData in mongo', sData)
+    Donor.find(sData, (err, data) => {
         if (err) {
             cb(err)
         } else {
-            // console.log('data:', data);
+            console.log('data:', data);
             cb(data)
         }
     })
 }
-
 
 
 
