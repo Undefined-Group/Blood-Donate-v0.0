@@ -1,55 +1,39 @@
 import React, { Component } from "react";
 import "./Delete.css";
-import axios from "./Axios";
 
 class Delete extends Component {
   state = {
-    Donor: {
-      reports: [],
-      _id: "5d778073b2e57e55e10528f6",
-      firstName: "doha",
-      lastName: "dojan",
-      phone: 962799333626,
-      email: "naaman@engineer.com",
-      bloodType: "A+",
-      country: "Jordan",
-      city: "zarqaa",
-      birthday: "1993-10-05T00:00:00.000Z",
-      numberOfcalls: 1,
-      dateOfPublish: "2019-09-08T22:41:50.852Z",
-      __v: 0
-    },
-    lastName: "dojan",
-    birthday: "1993-10-05",
-    email: "naaman@engineer.com"
+    LastName: "",
+    Birth: "",
+    Phone: ""
+  };
+  onChange1 = e => {
+    this.setState({
+      LastName: e.target.value
+    });
+  };
+  onChange2 = e => {
+    this.setState({
+      Birth: e.target.value
+    });
+  };
+  onChange3 = e => {
+    this.setState({
+      Phone: e.target.value
+    });
   };
 
-  DeleteDonor = () => {
-    if (
-      this.state.Donor.lastName === this.state.lastName &&
-      this.state.Donor.birthday.slice(0, 10) === this.state.birthday &&
-      this.state.Donor.email === this.state.email
-    ) {
-      console.log("this.state.Donor._id", this.state.Donor);
-      axios
-        .delete("/delete/delete", this.state.Donor)
-        .then(response => {
-          console.log("rawabi", response.data);
-        })
-        .catch(error => {
-          console.log("Error", error);
-        });
-      console.log("rawabi okour");
-    }
-  };
+  onSubmit = e => {
+    e.preventDefault();
 
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    console.log("Phone", this.state.Phone);
   };
-
   render() {
     return (
       <div className="container mt-3">
+        {/* <h2>Centered Modal Example</h2>*/}
+        {/*<p>Center the modal vertically and horizontally within the page, with the .modal-dialog-centered class.</p>*/}
+
         <button
           type="button"
           className="btn btn-outline-danger"
@@ -69,64 +53,59 @@ class Delete extends Component {
                 </button>
               </div>
 
-              <div className="modal-body">
-                <label htmlFor="LN" className="l">
-                  What is your Last Name?
-                </label>
-                <br></br>
-                <input
-                  className="form-control"
-                  name="lastName"
-                  value={this.state.lastName}
-                  type="text"
-                  onChange={this.onChange}
-                  id="LN"
-                  required
-                ></input>
-                <br></br>
+              <form onSubmit={this.onSubmit}>
+                <div className="modal-body">
+                  <label htmlFor="LN" className="l">
+                    What is your Last Name?
+                  </label>
+                  <br></br>
+                  <input
+                    className="form-control"
+                    type="text"
+                    onChange={this.onChange1}
+                    id="LN"
+                    required
+                  ></input>
+                  <br></br>
 
-                <label htmlFor="D" className="l">
-                  What is your Birth Date?
-                </label>
-                <br></br>
-                <input
-                  className="form-control"
-                  name="birthday"
-                  value={this.state.birthday}
-                  type="date"
-                  onChange={this.onChange}
-                  id="D"
-                  required
-                ></input>
-                <br></br>
+                  <label htmlFor="D" className="l">
+                    What is your Birth Date?
+                  </label>
+                  <br></br>
+                  <input
+                    className="form-control"
+                    type="date"
+                    onChange={this.onChange2}
+                    id="D"
+                    required
+                  ></input>
+                  <br></br>
 
-                <label htmlFor="PN" className="l">
-                  What is your Email Number?
-                </label>
-                <br></br>
-                <input
-                  className="form-control"
-                  name="email"
-                  value={this.state.email}
-                  type="email"
-                  min="6"
-                  max="13"
-                  onChange={this.onChange}
-                  id="PN"
-                  required
-                ></input>
-              </div>
+                  <label htmlFor="PN" className="l">
+                    What is your Phone Number?
+                  </label>
+                  <br></br>
+                  <input
+                    className="form-control"
+                    type="number"
+                    min="6"
+                    max="13"
+                    onChange={this.onChange3}
+                    id="PN"
+                    required
+                  ></input>
+                </div>
 
-              <div className="modal-footer">
-                <button
-                  type="submit"
-                  onClick={this.DeleteDonor}
-                  className="btn btn-outline-danger"
-                  id="a"
-                >
-                  Delete
-                </button>
-              </div>
+                <div className="modal-footer">
+                  <button
+                    type="submit"
+                    className="btn btn-outline-danger"
+                    id="a"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

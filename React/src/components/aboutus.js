@@ -5,8 +5,9 @@ export default class aboutus extends Component {
     return (
       <div>
         <p class="text-danger">
-          We seek to reduce the communication gap between donors and donors
-          seeking,<br>So that blood donation becomes easier.</br>{" "}
+          Better health for everyone, everywhere We seek to reduce the
+          communication gap between donors and donors seeking, So that blood
+          donation becomes easier.
         </p>
       </div>
     );

@@ -57,10 +57,7 @@ class Report extends Component {
   render() {
     return (
       <div className="container mt-3">
-        {/* <h2>Centered Modal Example</h2>*/}
-        {/*<p>Center the modal vertically and horizontally within the page, with the .modal-dialog-centered class.</p>*/}
-
-        <button
+              <button
           type="button"
           className="btn btn-outline-danger"
           data-toggle="modal"
