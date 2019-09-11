@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import Delete from "./components/Delete";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Terms from "./components/Terms";
 import AddSu from "./components/AddSu";
 import DeletF from "./components/DeletF";
@@ -126,7 +126,7 @@ class App extends React.Component {
       <SearchResults search={this.state.search} /> 
        <Search/>  */}
         <Search />
-        {/* <Aboutus/> */}
+        <Aboutus/>
         <Report />
         <Terms />
         <AddSu />

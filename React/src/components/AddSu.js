@@ -9,11 +9,12 @@ export default class TAddSu extends Component {
       fontFamily: "	Courier New",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      fontWeight: 'bold'
     };
 
     return (
-      <div className="container mt-3+">
+      <div className="container mt-3">
         <button
           type="button"
           className="btn btn-outline-danger"
@@ -26,14 +27,14 @@ export default class TAddSu extends Component {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                {/* <h6 className="modal-title" > Add Succeeded  </h6> */}
+                <h6 className="modal-title" > &#128204; </h6>
                 <button type="button" className="close" data-dismiss="modal">
                   ×
                 </button>
               </div>
-              <div>
+              <div className='border border-danger'>
                 {" "}
-                <h5 style={mystyle}> Add Succeeded &#xf004; </h5>{" "}
+                <h4 style={mystyle}>  &#10084; Add Succeeded &#10084; </h4>{" "}
               </div>
               <div className="modal-footer">
                 <button

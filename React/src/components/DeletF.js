@@ -9,7 +9,8 @@ export default class DeletF extends Component {
       fontFamily: "	Courier New",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      fontWeight: 'bold'
     };
     return (
       <div className="container mt-3+">
@@ -25,14 +26,14 @@ export default class DeletF extends Component {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                {/* <h4 className="modal-title"> Delete </h4> */}
+                <h4 className="modal-title">  &#128204; </h4>
                 <button type="button" className="close" data-dismiss="modal">
                   ×
                 </button>
               </div>
               <div>
-                <div>
-                  <h5 style={mystyle}>&#10060; Deletion failed &#10060;</h5>
+                <div className='border border-danger'>
+                  <h5 style={mystyle}>&#10006; Deletion failed &#10006;</h5>
                   <h5 style={mystyle}> Please Enter Your Right Information </h5>
                 </div>
                 <div className="modal-footer">

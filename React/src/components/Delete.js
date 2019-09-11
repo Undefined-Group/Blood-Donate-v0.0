@@ -43,9 +43,9 @@ class Delete extends Component {
           Delete
         </button>
 
-        <div className="modal fade" id="myModal">
+        <div className="modal fade " id="myModal">
           <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
+            <div className="modal-content ">
               <div className="modal-header">
                 <h4 className="modal-title">Do you want to remove Donor?</h4>
                 <button type="button" className="close" data-dismiss="modal">
@@ -54,7 +54,7 @@ class Delete extends Component {
               </div>
 
               <form onSubmit={this.onSubmit}>
-                <div className="modal-body">
+                <div className="modal-body ">
                   <label htmlFor="LN" className="l">
                     What is your Last Name?
                   </label>

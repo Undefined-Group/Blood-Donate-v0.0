@@ -9,7 +9,8 @@ export default class DeleSu extends Component {
       fontFamily: "	Courier New",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      fontWeight: 'bold'
     };
     return (
       <div className="container mt-3">
@@ -25,14 +26,14 @@ export default class DeleSu extends Component {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                {/* <h4 className="modal-title">  Deleted </h4> */}
+                <h4 className="modal-title">  &#128204; </h4>
                 <button type="button" className="close" data-dismiss="modal">
                   ×
                 </button>
               </div>
-              <div>
+              <div className='border border-danger'>
                 {" "}
-                <h5 style={mystyle}> Deleted &#10004;</h5>{" "}
+                <h3 style={mystyle}> Deleted &#10004;</h3>{" "}
                 <h5 style={mystyle}> Thanks You </h5>{" "}
               </div>
               <div className="modal-footer">
