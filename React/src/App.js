@@ -3,7 +3,7 @@ import SearchResults from "./components/SearchResults";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 // import SearchResults from "./components/SearchResults"
-import { BrowserRouter as Router, Route } from "react-router-dom";
+//import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "./components/Axios";
 import AddDonor from "./components/AddDonor";
 import Home from "./components/Home";
@@ -11,19 +11,20 @@ import Home from "./components/Home";
 import Search from "./components/Search";
 import Report from "./components/Report";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
+//import "react-phone-number-input/style.css";
+//import PhoneInput from "react-phone-number-input";
 
 // import 'react-phone-number-input/style.css'
 // import PhoneInput from 'react-phone-number-input'
 
 import Delete from "./components/Delete";
+import Terms from './components/Terms'
 
 class App extends React.Component {
   state = {
     DonorData: [],
-    search: [
-      {
+    search: [<Delete />
+      ,{
         reports: [],
         _id: "5d7583ae10835f244ba02aba",
         firstName: "naaman",
@@ -33,9 +34,9 @@ class App extends React.Component {
         bloodType: "A+",
         country: "Jordan",
         city: "Amman",
-        birthday: "1990-06-09T00:00:00.000Z",
+        birthday: "Terms1990-06-09T00:00:00.000Z",
         numberOfcalls: 1,
-        dateOfPublish: "2019-09-08T22:41:50.852Z",
+        dateOfPubliTermssh: "2019-09-08T22:41:50.852Z",
         __v: 0
       },
       {
@@ -120,19 +121,19 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Footer />
-        <Delete />
+        
+        <Footer/>
         {/* <Report/>
       <SearchResults search={this.state.search} /> 
        <Search/>  */}
-        <Router>
+        {/* <Router>
           <Route path="/" exact component={Home} />
           <Route
             path="/adddonor"
             component={() => <AddDonor postDonor={this.postDonor} />}
           />
           <Route path="/delete" component={Delete} />
-        </Router>
+        </Router> */}
       </>
     );
   }
