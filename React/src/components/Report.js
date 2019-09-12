@@ -13,16 +13,16 @@ class Report extends Component {
       email: "naaman@engineer.com",
       bloodType: "A+",
       country: "Jordan",
-      city: "Amman",
+      state: "Amman",
       birthday: "1990-06-09T00:00:00.000Z",
       numberOfcalls: 1,
       dateOfPublish: "2019-09-08T22:41:50.852Z",
       __v: 0
     }
   };
-  // componentWillMount() {
-  //   this.setState(Donor:this.props.donor)
-  // }
+  componentWillMount() {
+    this.setState({ Donor: this.props.donor })
+  }
 
   onChange = e => {
     // console.log("onChange", e.target.value);
@@ -31,8 +31,12 @@ class Report extends Component {
       this.setState({ emtpy: false });
     }
   };
-  onSubmit = e => {
+  onSubmit = async e => {
     e.preventDefault();
+    await this.setState({ Donor: this.props.donor })
+    console.log('object000', this.state.Donor)
+    console.log('object111', this.props.donor)
+
     if (this.state.report !== "other..") {
       let newReport = { ...this.state.Donor };
       newReport.reports.push(this.state.report);
@@ -55,21 +59,11 @@ class Report extends Component {
     // this.readRepo()
   };
   render() {
+    const { i } = this.props
+
     return (
-      <div className="container mt-3">
-        {/* <h2>Centered Modal Example</h2>*/}
-        {/*<p>Center the modal vertically and horizontally within the page, with the .modal-dialog-centered class.</p>*/}
-
-        <button
-          type="button"
-          className="btn btn-outline-danger"
-          data-toggle="modal"
-          data-target="#myModal"
-        >
-          Report
-        </button>
-
-        <div className="modal fade" id="myModal">
+      <>
+        <div className="modal fade" id={`Modalreport${i}`}>
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
@@ -88,13 +82,13 @@ class Report extends Component {
                       onClick={this.onChange}
                       value="Wronge phone number or unavailable"
                       type="radio"
-                      id="customRadio1"
-                      name="report"
+                      id={`reportID1${i}`}
+                      name={`report${i}`}
                       className="custom-control-input"
                     />
                     <label
                       className="custom-control-label"
-                      htmlFor="customRadio1"
+                      htmlFor={`reportID1${i}`}
                     >
                       Wronge phone number or unavailable.
                     </label>
@@ -104,13 +98,13 @@ class Report extends Component {
                       onClick={this.onChange}
                       value="Rude or dishonest promise"
                       type="radio"
-                      id="customRadio2"
-                      name="report"
+                      id={`reportID2${i}`}
+                      name={`report${i}`}
                       className="custom-control-input"
                     />
                     <label
                       className="custom-control-label"
-                      htmlFor="customRadio2"
+                      htmlFor={`reportID2${i}`}
                     >
                       Rude or dishonest promise .
                     </label>
@@ -120,13 +114,13 @@ class Report extends Component {
                       onClick={this.onChange}
                       value="Fake donor"
                       type="radio"
-                      id="customRadio3"
-                      name="report"
+                      id={`reportID3${i}`}
+                      name={`report${i}`}
                       className="custom-control-input"
                     />
                     <label
                       className="custom-control-label"
-                      htmlFor="customRadio3"
+                      htmlFor={`reportID3${i}`}
                     >
                       Fake donor
                     </label>
@@ -136,13 +130,13 @@ class Report extends Component {
                       onClick={this.onChange}
                       value="Spam"
                       type="radio"
-                      id="customRadio4"
-                      name="report"
+                      id={`reportID4${i}`}
+                      name={`report${i}`}
                       className="custom-control-input"
                     />
                     <label
                       className="custom-control-label"
-                      htmlFor="customRadio4"
+                      htmlFor={`reportID4${i}`}
                     >
                       Spam.
                     </label>
@@ -151,15 +145,15 @@ class Report extends Component {
                     <input
                       onClick={this.onChange}
                       type="radio"
-                      id="customRadio5"
-                      name="report"
+                      id={`reportID5${i}`}
+                      name={`report${i}`}
                       value="other.."
                       className="custom-control-input"
                       onSelect={this.other}
                     />
                     <label
                       className="custom-control-label"
-                      htmlFor="customRadio5"
+                      htmlFor={`reportID5${i}`}
                     >
                       other...
                       <br></br>
@@ -167,7 +161,7 @@ class Report extends Component {
                         style={{
                           display:
                             this.state.emtpy === false ||
-                            this.state.report === "other.."
+                              this.state.report === "other.."
                               ? "block"
                               : "none"
                         }}
@@ -186,7 +180,7 @@ class Report extends Component {
                   <button
                     disabled={
                       this.state.report !== "" &&
-                      this.state.report !== "other.."
+                        this.state.report !== "other.."
                         ? false
                         : true
                     }
@@ -203,7 +197,7 @@ class Report extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

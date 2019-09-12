@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import Delete from "./components/Delete";
+import Terms from './components/Terms'
 
 class App extends React.Component {
   state = {
@@ -26,9 +27,9 @@ class App extends React.Component {
         bloodType: "A+",
         country: "Jordan",
         city: "Amman",
-        birthday: "1990-06-09T00:00:00.000Z",
+        birthday: "Terms1990-06-09T00:00:00.000Z",
         numberOfcalls: 1,
-        dateOfPublish: "2019-09-08T22:41:50.852Z",
+        dateOfPubliTermssh: "2019-09-08T22:41:50.852Z",
         __v: 0
       },
       {
@@ -111,21 +112,24 @@ class App extends React.Component {
     console.log("sdata", sData);
     this.setState({ search: sData });
   };
+
+
   render() {
     return (
       <>
+        
 
         <Footer />
-        <Delete />
         {/* <Report/>
       <SearchResults search={this.state.search} /> 
        <Search/>  */}
-        <Router>
+        {/* <Router>
           <Route path="/" exact component={Home} />
           <Route
             path="/adddonor"
             component={() => <AddDonor postDonor={this.postDonor} />}
           />
+        </Router> */}
       </>
     );
   }

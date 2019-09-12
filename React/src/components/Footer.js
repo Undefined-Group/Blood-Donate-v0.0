@@ -2,14 +2,18 @@ import React, { Component } from "react";
 import './Footer.css'
 
 
-export default class footer extends Component {
+export default class Footer extends Component {
  render(){
    return (
-     <div className="footer"> 
-     
-       <p className="contact" ><a className="con" href="https://www.google.com">About Us</a> </p>
-       <p className="p" >    &#169; Copy Right Saved 2019 By Orange</p>
-     </div>
-   );
+    <footer class="font-small fixed-bottom bg-red text-center py-2" id="footer">
+
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="https://orange.com" id="cc"> Orange </a>
+    
+    <a href="/"class="contact">www.BloodDonaet.com</a>
+    </div>
+  
+  </footer>
+ );
  }
 }
