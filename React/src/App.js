@@ -27,9 +27,9 @@ class App extends React.Component {
         bloodType: "A+",
         country: "Jordan",
         city: "Amman",
-        birthday: "Terms1990-06-09T00:00:00.000Z",
+        birthday: "1990-06-09T00:00:00.000Z",
         numberOfcalls: 1,
-        dateOfPubliTermssh: "2019-09-08T22:41:50.852Z",
+        dateOfPublish: "2019-09-08T22:41:50.852Z",
         __v: 0
       },
       {
