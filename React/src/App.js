@@ -11,6 +11,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import Delete from "./components/Delete";
+// import Footer from "./components/Footer";
+import Terms from "./components/Terms";
+import AddSu from "./components/AddSu";
+import DeletF from "./components/DeletF";
+import Aboutus from "./components/Aboutus";
+import DeleSu from "./components/DeleSu";
+import RepoM from "./components/RepoM";
 
 class App extends React.Component {
   state = {
@@ -106,7 +113,6 @@ class App extends React.Component {
     cleanInput();
   };
 
-
   setSearch = sData => {
     console.log("sdata", sData);
     this.setState({ search: sData });
@@ -114,18 +120,26 @@ class App extends React.Component {
   render() {
     return (
       <>
-
         <Footer />
         <Delete />
         {/* <Report/>
       <SearchResults search={this.state.search} /> 
        <Search/>  */}
+        <Search />
+        <Aboutus/>
+        <Report />
+        <Terms />
+        <AddSu />
+        <DeletF />
+        <DeleSu />
+        <RepoM />
         <Router>
           <Route path="/" exact component={Home} />
           <Route
             path="/adddonor"
             component={() => <AddDonor postDonor={this.postDonor} />}
           />
+        </Router>
       </>
     );
   }
