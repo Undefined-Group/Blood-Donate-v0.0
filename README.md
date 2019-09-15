@@ -30,25 +30,25 @@ You can use single line  **npm run dev** to start react and server in one Termin
 
 **Home Page** 
   From this page  you can  donate or search for donor or read about us .
-[](/home.jpg)
+[]("home.jpg")
 
 
 **Donate page** 
  You can register as donater by provide us by your information as the picture below.
-[](/reg.jpg)
+[](reg.jpg)
 
  **Search Page**  
 You can search  about  blood donor by  country,state, and the blood type.
-[](/search.jpg)
+[](search.jpg)
 
 
  **About Us page** 
 You can read about  our Who we are?,Our Vision,and you can find information to Contact Us .
-[](/about.jpg)
+[](about.jpg)
 
 
 **Roadmap** 
-[](/road.jpg)
+[](road.jpg)
 
 **Contact** 
 Phone:+962-777-522-509
