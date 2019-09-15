@@ -57,10 +57,20 @@ https://donate-and-save-ojoca.herokuapp.com/about
 
 
 **Authors**
-**naaman Munther**  *https://github.com/naaman94*
-**Doha Dojan**     *https://github.com/dohadojan*
-**Rawabi Okour**   *https://github.com/RawabiFOkour*
-**Rashed Magdadi** *https://github.com/RashedMigdady*
+
+**naaman Munther** 
+*https://github.com/naaman94*
+
+**Doha Dojan**  
+
+*https://github.com/dohadojan*
+
+**Rawabi Okour**
+
+*https://github.com/RawabiFOkour*
+
+**Rashed Magdadi**
+*https://github.com/RashedMigdady*
 
 
 
