@@ -26,27 +26,29 @@ We seek to reduce the communication gap between donors and donors seeking.So tha
 You can use single line  **npm run dev** to start react and server in one Terminal.
 
 **Usage** 
+
+
 **Home Page** 
   From this page  you can  donate or search for donor or read about us .
-[](/5p.jpg)
+[](/home.jpg)
 
 
 **Donate page** 
  You can register as donater by provide us by your information as the picture below.
-[](/5p.jpg)
+[](/reg.jpg)
 
  **Search Page**  
 You can search  about  blood donor by  country,state, and the blood type.
-[](/5p.jpg)
+[](/search.jpg)
 
 
  **About Us page** 
 You can read about  our Who we are?,Our Vision,and you can find information to Contact Us .
-[](/5p.jpg)
+[](/about.jpg)
 
 
 **Roadmap** 
-[](/5p.jpg)
+[](/road.jpg)
 
 **Contact** 
 Phone:+962-777-522-509
